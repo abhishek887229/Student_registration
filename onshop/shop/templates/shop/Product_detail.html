@@ -1,4 +1,6 @@
-<h1>hello</h1>
+{% extends 'shop/base.html'%}
+
+{%block body%}
 {% for i in x%}
 <div class="card" style="display: inline-block;">
 <p>{{i.title}}</p>
@@ -6,3 +8,4 @@
 <img src="{{i.image}}" width="auto" height="200px">
 </div>
 {%endfor%}
+{%endblock%}
