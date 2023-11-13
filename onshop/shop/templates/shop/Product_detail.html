@@ -1,11 +1,25 @@
-{% extends 'shop/base.html'%}
 
-{%block body%}
-{% for i in x%}
-<div class="card" style="display: inline-block;">
-<p>{{i.title}}</p>
-<p>{{i.price}}$</p>
-<img src="{{i.image}}" width="auto" height="200px">
+{% extends 'shop/base.html' %}
+{%load static%}
+{% block body %}
+<div class="container">
+  <div class="row">
+    {% for i in x %}
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ i.image }}" alt="Card image cap">
+          <div class="card-body">
+            {% if i.title|length > 7 %}
+              <h5 class="card-title mb-1" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{ i.title }}</h5>
+            {% else %}
+              <h5 class="card-title mb-1">{{ i.title }}</h5>
+            {% endif %}
+            <p class="card-text text-muted mb-1" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{ i.price }}</p>
+            <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{%endfor%}
-{%endblock%}
+{% endblock %}
