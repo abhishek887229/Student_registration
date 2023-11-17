@@ -20,6 +20,17 @@
         </div>
       </div>
     {% endfor %}
+    <div class="row">
+      <div class="col-md-12">
+      <nav class="text-center">
+        {% if x.has_previous%}
+        <li><a href="?page={{x.previous_page_number}}">previous</a></li>
+        {%endif%}
+      </nav>
+    
   </div>
+  </div>
+  </div>
+
 </div>
 {% endblock %}
