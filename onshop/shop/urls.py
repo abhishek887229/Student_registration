@@ -7,4 +7,5 @@ app_name="shop"
 urlpatterns = [
     path("",views.show_product),
     path("item/<int:id>",views.detail,name="detail_view"),
+    
 ]
