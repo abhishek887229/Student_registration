@@ -1,0 +1,19 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-5">
+
+                <img src="{{detail.image}}" class="img-fluid img-thumbnail" alt="{{detail.id}}">
+        </div>
+
+        <div class="col-md-5 align-right">
+                <h2>{{detail.title}}</h2>
+                <p>{{detail.category}}</p>
+                <br>
+                <p class="text-decoration-overline">{{detail.price}} $</p>
+                <p>{{detail.descriptions}}</p>
+        </div>
+    </div>
+    <!-- Add other details as needed -->
+{% endblock %}

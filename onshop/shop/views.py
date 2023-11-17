@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Products
 from django.core.paginator import Paginator
 
@@ -18,3 +18,9 @@ def show_product(request):
     product_object = paginator.get_page(page)
 
     return render(request, 'shop/Product_detail.html', {'x': product_object})
+
+
+def detail(request, id):
+    # Use get_object_or_404 to handle the case where the product with the specified ID doesn't exist
+    product_object = get_object_or_404(Products, id=id)
+    return render(request, 'shop/detail.html', {"detail": product_object})

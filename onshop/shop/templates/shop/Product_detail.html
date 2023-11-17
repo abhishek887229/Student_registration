@@ -5,6 +5,7 @@
 <div class="container">
   <div class="row">
     {% for i in x %}
+    <a href="{% url 'shop:detail_view' i.id%}">
       <div class="col-md-3 mb-4">
         <div class="card h-100">
           <img class="card-img-top" src="{{ i.image }}" alt="Card image cap">
@@ -16,9 +17,11 @@
             {% endif %}
             <p class="card-text text-muted mb-1" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{ i.price }}</p>
             <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+           
           </div>
         </div>
       </div>
+    </a>
     {% endfor %}
     <div class="row">
       <div class="col-md-12">
