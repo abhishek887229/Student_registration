@@ -36,4 +36,18 @@
   </div>
 
 </div>
+<script>
+  console.log("hello this is field")
+
+  if(localStorage.getItem('cart')==null)
+  {
+    var cart={  };
+  }
+  else{
+    cart=JSON.parse(localStorage.getItem('cart'));
+
+  }
+  
+
+</script>
 {% endblock %}
